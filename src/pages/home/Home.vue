@@ -1,11 +1,17 @@
 <template>
   <div>
-    hello world
+    <HomeHeader></HomeHeader>
   </div>
 </template>
 <script>
+import HomeHeader from "./components/Header";
 export default {
-  name: "Home"
+  name: "Home",
+  //注册HomeHeader到Home上
+  components: {
+    HomeHeader
+  }
 };
 </script>
+
 <style></style>
