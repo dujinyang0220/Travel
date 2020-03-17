@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide :key="item.id" v-for="item of swiperList">
+    <swiper :options="swiperOption" v-if="showSwiper">
+      <swiper-slide :key="item.id" v-for="item of list">
         <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
 
@@ -13,6 +13,9 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+    list: Array
+  },
   data() {
     return {
       swiperOption: {
@@ -32,12 +35,17 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    showSwiper() {
+      return this.list.length;
+    }
   }
 };
 </script>
 <style lang="stylus" scoped>
 .wrapper>>>.swiper-pagination-bullet-active {
-  background: #fff;
+  background: #eee;
 }
 
 .wrapper {
