@@ -1,18 +1,18 @@
 <template>
   <div class="icons">
     <swiper>
-      <swiper-slide v-for="(page,index) of pages" :key="index">
+      <swiper-slide v-for="(page, index) of pages" :key="index">
         <div v-for="item in page" :key="item.id" class="icon">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
           </div>
-          <p class="icon-desc">{{item.desc}}</p>
+          <p class="icon-desc">{{ item.desc }}</p>
         </div>
       </swiper-slide>
     </swiper>
   </div>
 </template>
-<script >
+<script>
 export default {
   name: "HomeIcons",
   data() {
@@ -111,6 +111,7 @@ export default {
 .icons >>>.swiper-container {
   height: 0;
   padding-bottom: 50%;
+  margin-top:.2rem
 }
 
 .icon {
@@ -120,6 +121,7 @@ export default {
   width: 25%;
   height: 0;
   padding-bottom: 25%;
+
 
   .icon-img {
     position: absolute;
@@ -147,6 +149,7 @@ export default {
     line-height: 0.64rem;
     color: $darkTextColor;
     text-align: center;
+    min-width:0
     ellipsis();
   }
 }
