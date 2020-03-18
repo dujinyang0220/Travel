@@ -16,26 +16,6 @@ export default {
   props: {
     list: Array
   },
-  data() {
-    return {
-      swiperOption: {
-        pagination: ".swiper-pagination",
-        loop: true
-      },
-      swiperList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1905/f7/f7a4042302185dd0a3.img.jpg_350x240_bf499050.jpg"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://imgs.qunarzz.com/p/tts2/1908/50/1cc19b84e8af8602.jpg_750x440_b200afa0.jpg"
-        }
-      ]
-    };
-  },
   computed: {
     showSwiper() {
       return this.list.length;
