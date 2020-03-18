@@ -2,8 +2,8 @@
   <div>
     <CityHeader></CityHeader>
     <CitySearch></CitySearch>
-    <CityList :cities="cities" :hot="hotCities"></CityList>
-    <CityAlphabet :cities="cities"></CityAlphabet>
+    <CityList :cities="cities" :hot="hotCities" :letter="letter"></CityList>
+    <CityAlphabet :cities="cities" @change="handleLetterChange"></CityAlphabet>
   </div>
 </template>
 <script>
@@ -24,12 +24,17 @@ export default {
   data() {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ""
     };
   },
   methods: {
     getCityInfo() {
       axios.get("/static/mock/city.json").then(this.handleGetCityInfoSucc);
+    },
+    handleLetterChange(letter) {
+      console.log(letter);
+      this.letter = letter;
     },
     handleGetCityInfoSucc(res) {
       console.log(res);
