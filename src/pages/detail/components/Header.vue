@@ -76,7 +76,7 @@ export default {
   text-align: center;
   color: #fff;
   background: $bgColor;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
 
   .header-fixed-back {
     position: absolute;
