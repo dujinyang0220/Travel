@@ -19,9 +19,7 @@
             :key="item.id"
             @click="handleCityClick(item.name)"
           >
-            <div class="button">
-              {{ item.name }}
-            </div>
+            <div class="button">{{ item.name }}</div>
           </div>
         </div>
       </div>
